@@ -12,7 +12,7 @@
                 <div class="guidelines-content">
                     <div class="register__form">
                         <form >
-                            <label for="info" class="form__title"><b>Parents Infomation</b></label>
+                            <label *ngIf="count != 3"for="info" class="form__title"><b>Parents Infomation</b></label>
                             <div *ngIf="count == 1">
                                 <div class="form__sub-title">Father's Name</div>
                                 <label for="lname">Last Name</label>
@@ -52,8 +52,7 @@
                             </div>
 
                             <div *ngIf="count == 3">
-                                <div class="form__sub-title">Siblings Name</div>
-                                
+                                <label for="info" class="form__title"><b>Siblings Infomation</b></label>
                                 <div class="form__siblings">
                                     <label for="fname">Number of Siblings</label>
                                     <input type="text" [(ngModel)]="add_member.number_of_child" (keyup)="change_number()"
