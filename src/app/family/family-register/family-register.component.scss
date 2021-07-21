@@ -1,4 +1,3 @@
-
 .guidelines {
 	@media screen and (max-width: 768px) {
 		margin-top: 25px;
@@ -250,6 +249,10 @@
 
 	.btn-next {
 		margin-left: 84%;
+
+		@media screen and (max-width: 1280px) {
+			margin-left: 75%;
+		}
 	}
 
 }
