@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import * as $ from 'jquery';
+
 @Component({
   selector: 'app-family-list',
   templateUrl: './family-list.component.html',
@@ -17,6 +17,7 @@ export class FamilyListComponent implements OnInit {
     family_list                :any = null;
     family_info                :any = null;
     family_id                  :any = null;
+    family_single_data         :any = null;
 
   ngOnInit(): void {
 
@@ -73,6 +74,42 @@ export class FamilyListComponent implements OnInit {
      });
      this.load_family_list();   
 
+    },
+      error => {
+        console.log(error);
+      });
+  }
+  edit(id:any)
+  {
+    console.log('test', id);
+    
+    this.http.post(this.rest.domain + "/api/family/edit",
+    {
+      id : id
+    },
+    {
+    })
+    .subscribe(response => {
+      this.family_single_data = response;
+    },
+      error => {
+        console.log(error);
+      });
+  }
+  update(id:any)
+  {
+    this.http.post(this.rest.domain + "/api/family/update",
+    {
+      id : id,
+      data : this.family_single_data
+    },
+    {
+    })
+    .subscribe(response => {
+      this.toastr.success('Updated Successfully', 'Information', {
+        positionClass: 'toast-top-right', tapToDismiss: true
+     });
+     this.load_family_list();   
     },
       error => {
         console.log(error);
