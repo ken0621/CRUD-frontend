@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-family-list',
@@ -9,7 +10,7 @@ import * as $ from 'jquery';
 })
 export class FamilyListComponent implements OnInit {
 
-  constructor(public rest: UserService, private http: HttpClient) {
+  constructor(public rest: UserService, private http: HttpClient, private toastr: ToastrService) {
 
   }
 
@@ -67,6 +68,9 @@ export class FamilyListComponent implements OnInit {
     {
     })
     .subscribe(response => {
+      this.toastr.success('Deleted Successfully', 'Information', {
+        positionClass: 'toast-top-right', tapToDismiss: true
+     });
      this.load_family_list();   
 
     },

@@ -7,6 +7,7 @@ import { FamilyRegisterComponent } from '../family-register/family-register.comp
 import { FrontComponent } from '../front/front.component';
 import { FamilyListComponent } from '../family-list/family-list.component';
 import { SimpleModalModule } from 'ngx-simple-modal';
+import { ToastrModule , ToastContainerModule} from 'ngx-toastr';
 
 const routes: Routes = [
   {
@@ -20,7 +21,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),
-    SimpleModalModule.forRoot({container:document.body})],
+    SimpleModalModule.forRoot({container:document.body}),ToastrModule.forRoot(),
+    ToastrModule.forRoot({ positionClass: 'inline' }),
+    ToastContainerModule,
+  ],
   
     exports: [RouterModule],
   declarations: []

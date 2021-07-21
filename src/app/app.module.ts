@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FrontComponent } from './family/front/front.component';
 import { FamilyListComponent } from './family/family-list/family-list.component';
 import { SimpleModalModule } from 'ngx-simple-modal';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { SimpleModalModule } from 'ngx-simple-modal';
     FamilyRegisterComponent,
     LayoutComponent,
     FrontComponent,
-    FamilyListComponent
+    FamilyListComponent,
   ],
   imports: [
     HttpClientModule,
@@ -31,7 +32,9 @@ import { SimpleModalModule } from 'ngx-simple-modal';
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
-    SimpleModalModule,    
+    SimpleModalModule,   
+    ToastrModule.forRoot(),
+
   ],
   providers: [
     UserService,

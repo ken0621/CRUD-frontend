@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.1.2",
+    "@angular/animations": "^12.1.2",
     "@angular/common": "~12.1.2",
     "@angular/compiler": "~12.1.2",
     "@angular/core": "~12.1.2",
@@ -24,6 +24,7 @@
     "ng-form-group": "^1.4.2",
     "ngx-bootstrap": "^6.2.0",
     "ngx-simple-modal": "^1.4.17",
+    "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "wowjs": "^1.1.3",
