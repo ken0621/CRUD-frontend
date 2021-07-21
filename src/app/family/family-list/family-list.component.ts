@@ -108,8 +108,8 @@ export class FamilyListComponent implements OnInit {
     .subscribe(response => {
       this.toastr.success('Updated Successfully', 'Information', {
         positionClass: 'toast-top-right', tapToDismiss: true
-     });
-     this.load_family_list();   
+      });
+      this.get_info(this.family_id)
     },
       error => {
         console.log(error);
