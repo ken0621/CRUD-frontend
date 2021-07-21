@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <div class="custom-box__container">
+        <div class="custom-box guidelines">
+            <div class="custom-box__title">
+                <div class="custom-box__title-label">List of Family</div>
+            </div>
+            <div class="custom-box__info guidelines__body">
+                <div class="guidelines-content">
+                    <div class="table-responsive-xl table-custom">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" scope="col">List</th>
+                                    <th class="text-center" scope="col">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody *ngIf="family_list">
+                                <tr *ngFor="let list of family_list">
+                                    <td class="text-center view" title="View" (click)="get_info(list.family_id)" onclick="document.getElementById('id01').style.display='block'">Family
+                                        {{list.family_id}}</td>
+                                    <td class="text-center">
+                                        <button class="btn">Edit</button>
+                                        <button class="btn btn-delete" (click)="delete(list.family_id)">Delete</button>
+                                    </td>
+
+                                </tr>
+                                <tr *ngIf="!family_list">
+                                    <td colspan="2" class="text-center">No Data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP - VIEW FAMILY -->
+    <div class="modal fade" id="viewfamilyPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Family List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="custom-box__info guidelines__body">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i>
+                    Close</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="w3-container">
+        <div id="id01" class="w3-modal">
+
+            <div class="custom-box__container">
+                <div class="custom-box guidelines">
+                    <div class="custom-box__title">
+                        <div class="custom-box__title-label">Family {{family_id}}</div>
+                        <button onclick="document.getElementById('id01').style.display='none'" type="button"
+                            class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="custom-box__info guidelines__body">
+                        <div class="guidelines-content">
+                            <div class="table-responsive-xl table-custom">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" scope="col">Last Name</th>
+                                            <th class="text-center" scope="col">First Name</th>
+                                            <th class="text-center" scope="col">Middle Name</th>
+                                            <th class="text-center" scope="col">Date of Birth</th>
+                                            <th class="text-center" scope="col">Relation</th>
+                                            <th class="text-center" scope="col">Date Registered</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngIf="family_info">
+                                        <tr *ngFor="let list of family_info" data-toggle="modal">
+                                            <td class="text-center view" title="View">
+                                                {{list.last_name}}</td>
+                                            <td class="text-center view" title="View">
+                                                {{list.first_name}}</td>
+                                            <td class="text-center view" title="View">
+                                                {{list.middle_name}}</td>
+                                            <td class="text-center view" title="View">
+                                                {{list.birthdate}}</td>
+                                            <td class="text-center view" title="View">
+                                                {{list.relationship}}</td>
+                                            <td class="text-center view" title="View">
+                                                {{list.created_at}}</td>
+                                        </tr>
+                                        <tr *ngIf="!family_info">
+                                            <td colspan="6" class="text-center">No Data</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

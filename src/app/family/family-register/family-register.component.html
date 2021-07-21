@@ -1,0 +1,97 @@
+<div>
+    <div class="custom-box__container">
+        <div class="custom-box guidelines">
+            <div class="custom-box__title">
+                <div class="custom-box__title-label">FAMILY BACKGROUND</div>
+            </div>
+            <div class="custom-box__info guidelines__body">
+                <!-- <div class="pull-right">
+                    <button class="btn-proceed" style="margin-right: 42px; margin-top: 10px;
+                    width: auto;" type="button" (click)="add_investment()"><i class="fa fa-plus" style="margin-right: 7px;"></i> Add Investment</button>
+                </div> -->
+                <div class="guidelines-content">
+                    <div class="register__form">
+                        <form >
+                            <label for="info" class="form__title"><b>Parents Infomation</b></label>
+                            <div *ngIf="count == 1">
+                                <div class="form__sub-title">Father's Name</div>
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" name="father_lastname" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.father_lastname" placeholder="Last Name" required>
+                                
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="father_firstname" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.father_firstname" placeholder="First Name" required>
+
+                                <label for="lname">Middle Name</label>
+                                <input type="text" id="mname" name="father_middlename" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.father_middlename" placeholder="Middle Name" required>
+
+                                <label for="lname">Date of Birth</label>
+                                <input type="date"  name="father_birthdate" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.father_birthdate" required>
+                            </div>
+
+                            <div *ngIf="count == 2">
+                                <div class="form__sub-title">Mother's Name</div>
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" name="mother_lastname" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.mother_lastname" placeholder="Last Name" required>
+
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="mother_firstname" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.mother_firstname" placeholder="First Name" required>
+
+                                <label for="lname">Middle Name</label>
+                                <input type="text" id="mname" name="mother_middlename" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.mother_middlename" placeholder="Middle Name" required>
+    
+                                <label for="lname">Date of Birth</label>
+                                <input type="date"  name="mother_birthdate" [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="add_member.mother_birthdate" required>
+                            </div>
+
+                            <div *ngIf="count == 3">
+                                <div class="form__sub-title">Siblings Name</div>
+                                
+                                <div class="form__siblings">
+                                    <label for="fname">Number of Siblings</label>
+                                    <input type="text" [(ngModel)]="add_member.number_of_child" (keyup)="change_number()"
+                                        [ngModelOptions]="{standalone: true}" placeholder="Number of Siblings">
+                                </div>
+
+                                <div *ngFor="let dummy of ' '.repeat(add_member.number_of_child).split(''), let x = index">
+                                    <div class="form__spacing" *ngIf="add_member.number_of_child > 1">Sibling #{{x+1}} </div>
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" id="lname" name="siblings_lastname_[{{x}}]" [ngModelOptions]="{standalone: true}"
+                                        [(ngModel)]="add_member.siblings_lastname[x]" placeholder="Last Name" required>
+                                   
+                                    <label for="fname">First Name</label>
+                                    <input type="text" id="fname" name="siblings_firstname_[{{x}}]" [ngModelOptions]="{standalone: true}"
+                                        [(ngModel)]="add_member.siblings_firstname[x]" placeholder="First Name" required>
+
+                                    <label for="fname">Middle Name</label>
+                                    <input type="text" id="mname" name="siblings_middlename_[{{x}}]" [ngModelOptions]="{standalone: true}"
+                                        [(ngModel)]="add_member.siblings_middlename[x]" placeholder="Middle Name" required>
+
+                                    <label for="lname">Date of Birth</label>
+                                    <input type="date"  name="siblings_birthdate_[{{x}}]" [ngModelOptions]="{standalone: true}"
+                                        [(ngModel)]="add_member.siblings_birthdate[x]" required>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="btn-holder">
+                        <button class="btn {{count >= 2 ? '' : 'disabled'}}"
+                            (click)="check_info('previous')">Previous</button>
+                        <button *ngIf="count >= 1" class="btn btn-next {{count <= 2 ? '' : 'hide'}}"
+                            (click)="check_info('next')">Next</button>
+                        <button *ngIf="count == 3" class="btn btn-next"
+                            (click)="submit()">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
