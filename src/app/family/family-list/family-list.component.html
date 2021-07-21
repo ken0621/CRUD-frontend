@@ -109,7 +109,7 @@
                     <div class="custom-box__title">
                         <div class="custom-box__title-label">Update Infomation</div>
                         <button onclick="document.getElementById('id02').style.display='none'" type="button"
-                            class="close__update" data-dismiss="modal" aria-label="Close">
+                            class="close close__update" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -120,11 +120,11 @@
                                     <form *ngIf="family_single_data">
                                         <label for="lname">Last Name</label>
                                         <input type="text" id="lname" name="father_lastname" [ngModelOptions]="{standalone: true}"
-                                            [(ngModel)]="family_single_data.first_name" placeholder="Last Name" required>
+                                            [(ngModel)]="family_single_data.last_name" placeholder="Last Name" required>
                                         
                                         <label for="fname">First Name</label>
                                         <input type="text" id="fname" name="father_firstname" [ngModelOptions]="{standalone: true}"
-                                            [(ngModel)]="family_single_data.last_name" placeholder="First Name" required>
+                                            [(ngModel)]="family_single_data.first_name" placeholder="First Name" required>
         
                                         <label for="lname">Middle Name</label>
                                         <input type="text" id="mname" name="father_middlename" [ngModelOptions]="{standalone: true}"
