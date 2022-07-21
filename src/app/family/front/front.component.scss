@@ -48,7 +48,7 @@
 
 //     @media screen and (max-width: 1280px) {
 
-        // background-image: url('../../../assets/landing_page/bg-004.png');
+// background-image: url('../../../assets/landing_page/bg-004.png');
 //     }
 // }
 
@@ -84,19 +84,22 @@
     border-radius     : 100px 0 100px 0;
     z-index           : 999;
     position          : relative;
+    background        : #ffffff26 !important;
+    backdrop-filter   : blur(29px);
+    box-shadow        : 0 8px 32px 0 #00000080;
 }
 
 .register .form-section:before {
-    position        : absolute;
-    content         : '';
-    top             : 0;
-    left            : 0;
-    right           : 0;
-    bottom          : 0;
-    z-index         : -999;
+    position           : absolute;
+    content            : '';
+    top                : 0;
+    left               : 0;
+    right              : 0;
+    bottom             : 0;
+    z-index            : -999;
     // background   : #21095a3d;
-    background      : white;
-    border-radius   : 100px 0 100px 0;
+    // background      : white;
+    border-radius      : 100px 0 100px 0;
 }
 
 .register h1,
@@ -136,7 +139,7 @@ h6,
 }
 
 .register .form-section p {
-    color        : black;
+    color        : #fff;
     margin-bottom: 0;
     font-size    : 16px;
 }
@@ -170,7 +173,7 @@ h6,
     margin     : 0 0 40px;
     font-size  : 22px;
     font-weight: 400;
-    color      : black;
+    color      : #ffffff;
 }
 
 .register .form-section .form-group {
@@ -191,8 +194,9 @@ h6,
 }
 
 .register .form-section label {
-    color    : black;
-    font-size: 16px;
+    color     : #ffffff;
+    font-size : 16px;
+    margin-top: 8px;
 }
 
 .register .form-section .checkbox .terms {
@@ -205,6 +209,7 @@ h6,
 
 .register .form-section .checkbox {
     font-size: 16px;
+    transform: scale(1.3);
 }
 
 .register .form-section .form-check {
@@ -284,8 +289,8 @@ h6,
     border-radius    : 54px;
     outline          : none;
     border           : none;
-    background-image: linear-gradient(to right, #8b02a0, #56029B, #8b02a0);
-    background-size  : 200%;
+    background-image : linear-gradient(to right, #1ed760, #24c166, #f44336);
+    background-size  : 250%;
     font-size        : 1.2rem;
     color            : #fff;
     font-family      : 'Poppins', sans-serif;
@@ -422,8 +427,7 @@ h6,
     background   : red;
 }
 
-.show__pass
-{
-    margin-top: -25px;
+.show__pass {
+    margin-top : -25px;
     margin-left: 22px;
 }
