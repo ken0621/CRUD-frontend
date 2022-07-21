@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import * as $ from "jquery";
+
 
 @Component({
   selector: 'app-front',
@@ -11,6 +13,14 @@ import { ToastrService } from 'ngx-toastr';
 export class FrontComponent implements OnInit {
 
   data        :any = {};
+  account_details :any = {};
+  headers :any = null;
+  birthdate :any = "2005-03-05";
+  submitted   :any  = false;
+  show_pass		:any	= false;
+  info      :any = {};
+	error_message = null;
+  
   constructor(public rest: UserService, private http: HttpClient, private toastr: ToastrService) {
 
   }
@@ -19,20 +29,24 @@ export class FrontComponent implements OnInit {
     this.data.info="sana all";
   }
 
-  test()
+  create()
   {
-    // this.http.get(this.rest.domain + "/family/load_family_list",
-    // {
-    // },
-    // {
-    // })
-    // .subscribe(response => {
-           
-
-    // },
-    //   error => {
-    //     console.log(error);
-    //   });
+    this.submitted = true;
+    $.get(this.rest.domain + "/spotify/registration" + '?' + this.arrayToQueryString(this.info),(response) =>
+    {   
+      if(response['status'] == 'success')
+      {
+        this.toastr.success(response['status_message'], 'Information', {
+        positionClass: 'toast-top-right', tapToDismiss: true});  
+      }
+      else
+      {
+        this.toastr.error(response['status_message'], 'Information', {
+        positionClass: 'toast-top-right', tapToDismiss: true});
+      }
+      this.submitted = false;
+      
+    });  
   }
 
   arrayToQueryString(array_in:any)
