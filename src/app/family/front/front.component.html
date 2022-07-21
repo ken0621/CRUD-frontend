@@ -16,7 +16,7 @@
                 quaerat natus in! Aperiam neque optio animi culpa iusto cumque omnis quis.</div>
                 <br>
                 <div>
-                    <button (click)="test()">Click Here</button>
+                    <a href="{{ rest.domain + '/family/load_family_list' + '?' + arrayToQueryString(this.data) }}"><button >Click Here</button></a>
                     <button  [routerLink]="['/family/register']" class="btn-start">GET STARTED</button>
                 </div>
             </div>
