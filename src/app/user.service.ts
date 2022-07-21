@@ -19,10 +19,11 @@ export class UserService
       
         if(isDevMode())
         {
-            this.domain = "http://familylist.test";
+            this.domain = "http://crud.test";
         }
         else
         {
+
         }
     }
 
