@@ -36,15 +36,16 @@ export class FrontComponent implements OnInit {
     {   
       if(response['status'] == 'success')
       {
+        this.submitted = false;
         this.toastr.success(response['status_message'], 'Information', {
         positionClass: 'toast-top-right', tapToDismiss: true});  
       }
       else
       {
+        this.submitted = false;
         this.toastr.error(response['status_message'], 'Information', {
         positionClass: 'toast-top-right', tapToDismiss: true});
       }
-      this.submitted = false;
       
     });  
   }
